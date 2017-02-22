@@ -20,6 +20,7 @@
 
     <modules>
         <module>springcloud-config</module>
+        <module>springcloud-domain</module>
     </modules>
 
     <properties>
@@ -62,6 +63,13 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context-support</artifactId>
                 <version>4.3.3.RELEASE</version>
+            </dependency>
+
+            <!--自动生成get,set-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.12</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
