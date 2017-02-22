@@ -4,7 +4,6 @@ import com.bean.User;
 import com.plugin.json.JSON;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by wangyong on 17-2-21.
