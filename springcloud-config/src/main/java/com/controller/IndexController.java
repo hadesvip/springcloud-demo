@@ -2,6 +2,7 @@ package com.controller;
 
 import com.bean.User;
 import com.plugin.json.JSON;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 //@RestController
 @Controller
+@Api("首页")
 public class IndexController {
 
     @GetMapping("/")
@@ -19,4 +21,5 @@ public class IndexController {
         user.setUserName("admin");
         return user;
     }
+
 }
