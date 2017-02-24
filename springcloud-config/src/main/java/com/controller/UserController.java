@@ -4,10 +4,7 @@ import com.bean.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by wangyong on 17-2-23.
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api("用户接口")
 public class UserController {
 
-
     @ApiOperation(value = "获取用户信息", notes = "根据用户编号获取用户信息")
     @ApiImplicitParam(name = "userId", paramType = "path", value = "用户编号", required = true, dataType = "int")
     @GetMapping("/getUser/{userId}")
@@ -26,5 +22,13 @@ public class UserController {
         System.out.println("id:" + userId);
         user.setUserName("张三");
         return user;
+    }
+
+    @ApiOperation(value = "打招呼", notes = "简单的打招呼")
+    @ApiImplicitParam(name = "userName", paramType = "path", value = "用户名", required = true, dataType = "String")
+    @PostMapping("/hello/{userName}")
+    public String hello(@PathVariable String userName) {
+
+        return "hello," + userName;
     }
 }
