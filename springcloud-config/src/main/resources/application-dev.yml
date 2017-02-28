@@ -2,3 +2,14 @@ debug: true
 server:
   port: 8888
   context-path: /
+spring:
+  datasource:
+    name: springCloud-demo
+    driver-class-name:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hadesvip/springcloud-demo.git
+          search-paths: config
+          basedir: springcloud-demo
