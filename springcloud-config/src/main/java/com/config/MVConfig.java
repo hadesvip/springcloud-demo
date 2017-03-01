@@ -20,4 +20,5 @@ public class MVConfig extends WebMvcConfigurerAdapter {
         returnValueHandlers.add(new JsonReturnHandler());
         super.addReturnValueHandlers(returnValueHandlers);
     }
+
 }

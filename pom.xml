@@ -21,6 +21,7 @@
     <modules>
         <module>springcloud-config</module>
         <module>springcloud-domain</module>
+        <module>springcloud-service</module>
     </modules>
 
     <properties>
@@ -33,27 +34,23 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- <dependency>
+                 <groupId>org.springframework.cloud</groupId>
+                 <artifactId>spring-cloud-config</artifactId>
+                 <version>1.0.4.RELEASE</version>
+                 <type>pom</type>
+                 <scope>import</scope>
+             </dependency>-->
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-config</artifactId>
-                <version>1.0.4.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.2.0</version>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${springboot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-config</artifactId>
-                <version>1.2.2.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-config-server</artifactId>
-                <version>1.2.2.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -76,6 +73,25 @@
                 <version>4.3.3.RELEASE</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.4.1</version>
+            </dependency>
+
+
             <!--自动生成get,set-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -95,22 +111,16 @@
                 <version>2.2.2</version>
             </dependency>
 
-            <!-- <dependency>
-                 <groupId>mysql</groupId>
-                 <artifactId>mysql-connector-java</artifactId>
-                 <version>5.1.40</version>
-             </dependency>-->
-
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.40</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
-        <!--   <plugins>
-               <plugin>
-                   <groupId>org.springframework.boot</groupId>
-                   <artifactId>spring-boot-maven-plugin</artifactId>
-               </plugin>
-           </plugins>-->
+
     </build>
 
     <developers>

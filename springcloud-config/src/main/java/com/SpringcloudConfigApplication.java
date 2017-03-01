@@ -1,11 +1,13 @@
 package com;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableConfigServer
+@EnableTransactionManagement
+@MapperScan("com.mapper")
 public class SpringcloudConfigApplication {
 
     public static void main(String[] args) {
