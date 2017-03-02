@@ -1,6 +1,0 @@
-debug: true
-server:
-  port: 8888
-  context-path: /
-
-

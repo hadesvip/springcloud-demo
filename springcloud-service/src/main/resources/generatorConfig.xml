@@ -38,10 +38,10 @@
                              targetProject="/home/wangyong/code/springcloud-demo/springcloud-service/src/main/java">
         </javaClientGenerator>
 
-        <table tableName="%" enableCountByExample="false" enableUpdateByExample="false"
+      <!--  <table tableName="%" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="Mysql"/>
-        </table>
+        </table>-->
     </context>
 </generatorConfiguration>

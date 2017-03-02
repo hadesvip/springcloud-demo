@@ -1,3 +1,12 @@
 spring:
-  profiles:
-    active: dev
+  cloud:
+    config:
+      uri: 127.0.0.1:8889
+      profile: dev
+      name: application
+
+
+debug: true
+server:
+  context-path: /
+  port: 8889
