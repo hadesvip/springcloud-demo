@@ -1,9 +1,11 @@
 package com.controller;
 
 import com.bean.User;
+import com.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @Api("用户接口")
 public class UserController {
+
+    @Autowired
+    private UserService userService;
 
     @ApiOperation(value = "获取用户信息", notes = "根据用户编号获取用户信息")
     @ApiImplicitParam(name = "userId", paramType = "path", value = "用户编号", required = true, dataType = "int")
@@ -29,6 +34,9 @@ public class UserController {
     @PostMapping("/hello/{userName}")
     public String hello(@PathVariable String userName) {
 
+        userService.saveUser("张三", "123456", "普通用户");
         return "hello," + userName;
     }
+
+
 }

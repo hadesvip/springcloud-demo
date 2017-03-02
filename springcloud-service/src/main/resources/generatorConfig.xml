@@ -8,6 +8,12 @@
     <!--  <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
 
     <context id="springcloud" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://192.168.1.126/mydb?characterEncoding=utf8"
                         userId="root"
@@ -18,18 +24,23 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.bean" targetProject="/home/wangyong/code/springcloud-demo/springcloud-domain\src\main\java">
+        <javaModelGenerator targetPackage="com.bean"
+                            targetProject="/home/wangyong/code/springcloud-demo/springcloud-domain/src/main/java">
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper" targetProject="/home/wangyong/code/springcloud-demo\springcloud-service\src\main\resources\mapper">
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/home/wangyong/code/springcloud-demo/springcloud-service/src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper" targetProject="/home/wangyong/code/springcloud-demo\springcloud-service\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper"
+                             targetProject="/home/wangyong/code/springcloud-demo/springcloud-service/src/main/java">
         </javaClientGenerator>
 
-        <table tableName="%">
+        <table tableName="%" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="Mysql"/>
         </table>
     </context>
